@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# 缩略图友好 URL：直接文件访问，不走 PHP
+RewriteRule ^thumbnails/(.*)$ public/thumbnails/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

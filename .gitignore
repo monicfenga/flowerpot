@@ -1,0 +1,54 @@
+# 敏感配置
+config.php
+.env
+
+# 数据文件
+data/flowerpot.db
+data/tmp/
+data/exports/
+
+# 生成的缩略图
+public/thumbnails/*
+!public/thumbnails/.gitkeep
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+data/test/
+
+# 视频等二进制素材不入库
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# 仓库抢救备份不入库
+.git.corrupt*/
+
+# 运行时节流状态
+data/ai_throttle.json
+data/*.zip
+data/*-journal
+*.db-wal
+*.db-shm
+
+# 根目录 _ 前缀的临时测试脚本与运行日志
+/_*.php
+/_*.log
+/_*.txt
+
+# ffmpeg/ffprobe 二进制不入库（ffprobe.exe 116MB 超过 GitHub 单文件 100MB 硬限制）
+inc/*.exe
+# 个人批量运行脚本（含真实客户素材路径），不入库
+cli/_*.ps1
+
+# 旧仓库抢救备份（2026-10-04 损坏前快照），不入库
+data/git-backup-*/
+
+# 运行时体检状态（同 ai_throttle.json，每次体检都变）
+data/health.json
